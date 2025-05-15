@@ -18,7 +18,7 @@ useEffect(()=>{
   method:'GET',
   headers:{
     accept:'application/json',
-   Authorization: `Bearer ${Acess_Token}`
+   Authorization: `Bearer ${AccessToken}`
 
   }
 
