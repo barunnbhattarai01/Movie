@@ -1,7 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function Card({ movies }) {
+
+function Card({ movies ,fetchTrailer}) {
+
+
+ 
+
+
+
   return (
     <div className="p-10 grid gap-6 grid-cols-1 md:grid-cols-2">
       {movies.length > 0 ? (
@@ -26,6 +33,7 @@ function Card({ movies }) {
             <p>Language: <span>{movie.original_language.toUpperCase()}</span></p>
             <button
               type="submit"
+               onClick={() => fetchTrailer(movie.id)}    
               className="border-2 rounded-2xl cursor-pointer p-1 mt-7 ml-40 bg-amber-200 hover:scale-105 transition-transform"
             >
               Watch

@@ -31,11 +31,28 @@ useEffect(()=>{
 
 },[])
 
+//for fetching movie trailer
+const fetchTrailer = async (movieId) => {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${ApiKey}`
+  );
+  const data = await res.json();
+  const trailer = data.results.find(
+    (vid) => vid.type === "Trailer" && vid.site === "YouTube"
+  );
+  if (trailer) {
+    window.open(`https://www.youtube.com/watch?v=${trailer.key}`, "_blank");
+  } else {
+    alert("Trailer not available");
+  }
+};
+
 
 return(
 <div>
     <Card
       movies={movies}
+      fetchTrailer={fetchTrailer}
     />
 </div>
 
