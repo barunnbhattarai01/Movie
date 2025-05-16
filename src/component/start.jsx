@@ -16,6 +16,13 @@ function Start({ onSearch }) {
         onSubmit={handleSubmit}
         className="flex flex-col sm:flex-row items-center gap-4 bg-white p-8 rounded-2xl shadow-lg "
       >
+        
+      
+        <img
+          src="./logo.png" 
+          alt="Logo"
+          className="w-12 h-12 object-contain"
+        />
         <input
           type="text"
           value={query}
