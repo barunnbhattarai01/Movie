@@ -62,6 +62,19 @@ else{
   alert("trailer not avaiable");
 }
 };
+//watchlist 
+const [watchlist, setWatchlist] = React.useState([]);
+
+const toggleWatchlist = (movie) => {
+  setWatchlist((prev) => {
+    const exists = prev.find((m) => m.id === movie.id);
+    if (exists) {
+      return prev.filter((m) => m.id !== movie.id); // Remove
+    } else {
+      return [...prev, movie]; //add
+    }
+  });
+};
 
 
 
@@ -73,7 +86,27 @@ return(
     <Card
       movies={movies}
       fetchTrailer={fetchTrailer}
+        toggleWatchlist={toggleWatchlist}
+  watchlist={watchlist}
     />
+    {watchlist.length > 0 && (
+  <div className="p-8">
+    <h2 className="text-2xl font-bold mb-4 text-center">Your Watchlist</h2>
+    <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {watchlist.map((movie) => (
+        <div key={movie.id} className="bg-white p-4 rounded-xl shadow-md border">
+          <img
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            alt={movie.title}
+            className="w-full h-64 object-cover rounded-md mb-3"
+          />
+          <p className="text-center font-semibold">{movie.title}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
    
 </div>
 

@@ -2,9 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 
 
-function Card({ movies ,fetchTrailer}) {
+function Card({ movies ,fetchTrailer,toggleWatchlist,watchlist}) {
 
-
+const isInWatchlist =(movieId)=>
+  watchlist.some((movie)=>movie.id===movieId);
  
 
 
@@ -36,8 +37,21 @@ function Card({ movies ,fetchTrailer}) {
                onClick={() => fetchTrailer(movie.id)}    
               className="border-2 rounded-2xl cursor-pointer p-1 mt-7 ml-40 bg-amber-200 hover:scale-105 transition-transform"
             >
-              Watch
+              Watch Trailer
             </button>
+
+          <button
+          onClick={()=> toggleWatchlist(movie)}
+         className={`px-4 py-2 rounded-full transition ${
+                  isInWatchlist(movie.id)
+                    ? "bg-red-400 text-white hover:bg-red-500"
+                    : "bg-green-400 text-white hover:bg-green-500"
+                }`}>
+
+              { isInWatchlist(movie.id) ? "Remove from Watchlist" : "Add to Watchlist"}
+
+                </button>
+
           </motion.div>
         ))
       ) : (
