@@ -27,7 +27,7 @@ useEffect(()=>{
   .then(res=>res.json())
    .then(data=>setMovies(data.results))
    .catch(err=>console.error('Error fetching movies:',err));
-    console.log(setMovies)
+   // console.log(setMovies)
 
 },[])
 
