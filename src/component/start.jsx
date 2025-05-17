@@ -5,24 +5,31 @@ function Start({ onSearch }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (query.trim()) {
+    if (query.trim()) { 
       onSearch(query.trim());
     }
   };
 
   return (
-    <div className="flex justify-center">
+  <>    
+  <div className="">
+   <img
+          src="./logo.png" 
+          alt="Logo"
+          className="w-24"
+        />
+    </div>
+
+
+    <div className="flex justify-center ">
+      
       <form
         onSubmit={handleSubmit}
         className="flex flex-col sm:flex-row items-center gap-4 bg-white p-8 rounded-2xl shadow-lg "
       >
         
       
-        <img
-          src="./logo.png" 
-          alt="Logo"
-          className="w-12 h-12 object-contain"
-        />
+      
         <input
           type="text"
           value={query}
@@ -38,6 +45,7 @@ function Start({ onSearch }) {
         </button>
       </form>
     </div>
+    </>
   );
 }
 

@@ -5,6 +5,7 @@ import Start from "./start";
 
 
 
+
 function Fetch(){
      const ApiKey = import.meta.env.VITE_TMDB_API_KEY;
   const AccessToken = import.meta.env.VITE_TMDB_ACCESS_TOKEN;
@@ -78,17 +79,23 @@ const toggleWatchlist = (movie) => {
 
 
 
+
+
+
 return(
 <div>
   <Start
     onSearch={setSearch}
     />
+
     <Card
       movies={movies}
       fetchTrailer={fetchTrailer}
         toggleWatchlist={toggleWatchlist}
   watchlist={watchlist}
     />
+
+    
     {watchlist.length > 0 && (
   <div className="p-8">
     <h2 className="text-2xl font-bold mb-4 text-center">Your Watchlist</h2>

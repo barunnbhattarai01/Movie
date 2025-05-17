@@ -39,7 +39,9 @@ const isInWatchlist =(movieId)=>
             >
               Watch Trailer
             </button>
+              
 
+              
           <button
           onClick={()=> toggleWatchlist(movie)}
          className={`px-4 py-2 rounded-full transition ${
