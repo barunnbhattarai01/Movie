@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import Card from "./card";
 import Start from "./start";
+import Watchlist from "./watchlist";
 
 
 
@@ -83,6 +84,13 @@ return(
   <Start
     onSearch={setSearch}
     />
+
+    <div className="flex flex-col items-center space-y-4">
+      <h1 className="font-bold text-2xl pt-5">Movie Slideshow</h1>
+    <Watchlist/>
+
+    </div>
+
     <Card
       movies={movies}
       fetchTrailer={fetchTrailer}
