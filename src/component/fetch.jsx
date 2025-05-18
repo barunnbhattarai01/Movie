@@ -86,7 +86,7 @@ return(
     />
 
     <div className="flex flex-col items-center space-y-4">
-      <h1 className="font-bold text-2xl pt-5">Movie Slideshow</h1>
+      <h1 className="font-bold text-2xl pt-5">🎥Movie Slideshow</h1>
     <Watchlist/>
 
     </div>

@@ -13,7 +13,7 @@ function Watchlist(){
       method: 'GET',
       headers: {
         accept: 'application/json',
-        Authorization: 'Bearer ${AccessToken}'
+        Authorization: `Bearer ${AccessToken}` 
       }
     };
 
